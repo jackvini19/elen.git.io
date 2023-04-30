@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff;
+}
+
+button {
+    font-size: 24px;
+    background-color: #238804;
+    border: none;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: pink;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    padding: 20px 0;
+}
+
+button {
+    font-size: 24px;
+    background-color: #fff;
+    border: 2px solid pink;
+    color: pink;
+    padding: 15px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin: 20px;
+}
+
+button:hover:not(#no) {
+    transform: scale(1.1);
+}
+
+#no:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    20% {
+        transform: translate(-10px, 0);
+    }
+
+    40% {
+        transform: translate(10px, 0);
+    }
+
+    60% {
+        transform: translate(-10px, 0);
+    }
+
+    80% {
+        transform: translate(10px, 0);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}.mensagem-box {
+     position: relative;
+ }
+
+.mensagem-box .meu-botao {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mensagem-box .seta {
+    position: absolute;
+    top: 20px; /* ajuste a posição vertical da seta aqui */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #000;
+}
+
+.mensagem-box .meu-botao.rotacao-0 {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.mensagem-box .meu-botao.rotacao-90 {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.mensagem-box .meu-botao.rotacao-180 {
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.mensagem-box .meu-botao.rotacao-270 {
+    transform: translate(-50%, -50%) rotate(270deg);
+}

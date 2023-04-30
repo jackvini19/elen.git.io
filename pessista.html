@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Tela em branco</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="message-box">
+    <p>Ao clicar neste botão, não tem mais volta e sua vida vai mudar bastante! E não aceito um não como resposta kkkkkk</p>
+    <p>Então nem tente clicar no Não kkkkk, seja feliz e clique aqui <span class="meu-botao">&#8595;</span></p>
+    <div class="seta"></div>
+    <a href="pedido.html"><button>Botão Mágico</button></a>
+</div>
+<script>
+    const button = document.querySelector('.meu-botao');
+    const arrow = document.querySelector('.seta');
+
+    function updateButtonRotation() {
+        const arrowRect = arrow.getBoundingClientRect();
+        const buttonRect = button.getBoundingClientRect();
+        const centerX = arrowRect.left + arrowRect.width / 2;
+        const centerY = arrowRect.top + arrowRect.height / 2;
+        const buttonX = buttonRect.left + buttonRect.width / 2;
+        const buttonY = buttonRect.top + buttonRect.height / 2;
+        const angle = Math.atan2(centerY - buttonY, centerX - buttonX);
+        const degree = angle * (180 / Math.PI);
+        button.classList.remove('rotacao-0', 'rotacao-90', 'rotacao-180', 'rotacao-270');
+        if (degree >= -45 && degree <= 45) {
+            button.classList.add('rotacao-0');
+        } else if (degree > 45 && degree < 135) {
+            button.classList.add('rotacao-90');
+        } else if (degree >= 135 || degree <= -135) {
+            button.classList.add('rotacao-180');
+        } else {
+            button.classList.add('rotacao-270');
+        }
+    }
+
+    arrow.addEventListener('mousemove', updateButtonRotation);
+
+</script>
+</body>
+</html>
